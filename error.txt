@@ -1,1 +1,2 @@
 /mnt/ht2-nas2/EO_test/miniconda3/envs/openmm2m_j/bin/torchrun: /home/users_test/miniconda3/envs/openmm/bin/python3.11: bad interpreter: No such file or directory
+1.olmoearth 10m中间版（finetune miou=62.03）与olmoearth ema版本（finetune miou=63.91）微调训练与推理，结果已更新。2.pastis在olmoearth-rgb模型上的适配训练拉起。
