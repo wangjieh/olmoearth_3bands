@@ -1,0 +1,48 @@
+Traceback (most recent call last):
+  File "/mnt/ht2-nas2/EO_test/wj1/mm_series/mmseg_olmoearth_2m/projects/olmoearth/../../tools/train.py", line 104, in <module>
+    main()
+  File "/mnt/ht2-nas2/EO_test/wj1/mm_series/mmseg_olmoearth_2m/projects/olmoearth/../../tools/train.py", line 100, in main
+    runner.train()
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/mmengine/runner/runner.py", line 1777, in train
+    model = self.train_loop.run()  # type: ignore
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/mmengine/runner/loops.py", line 98, in run
+    self.run_epoch()
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/mmengine/runner/loops.py", line 114, in run_epoch
+    for idx, data_batch in enumerate(self.dataloader):
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1346, in _next_data
+    return self._process_data(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1372, in _process_data
+    data.reraise()
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/torch/_utils.py", line 705, in reraise
+    raise exception
+ValueError: Caught ValueError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/mmengine/dataset/base_dataset.py", line 410, in __getitem__
+    data = self.prepare_data(idx)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/mmengine/dataset/base_dataset.py", line 793, in prepare_data
+    return self.pipeline(data_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/mmengine/dataset/base_dataset.py", line 60, in __call__
+    data = t(data)
+           ^^^^^^^
+  File "/mnt/ht2-nas2/EO_test/miniconda3/envs/openmm-2m/lib/python3.11/site-packages/mmcv/transforms/base.py", line 12, in __call__
+    return self.transform(results)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ht2-nas2/EO_test/wj1/mm_series/mmseg_olmoearth_2m/projects/olmoearth/olmoearth/transforms/normalize.py", line 49, in transform
+    raise ValueError(
+ValueError: Expected 48 channels, got 144
